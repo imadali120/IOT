@@ -11,8 +11,8 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 
-const char* ssid = "Kokuzna Vremena";
-const char* password = "necutireci";
+const char* ssid = "TP-Link_88C8";
+const char* password = "11797869";
 
 
 FirebaseConfig firebaseConfig;
