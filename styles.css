@@ -1,42 +1,119 @@
+/* styles.css */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: sans-serif;
+  background-color: #121212; /* Dark background (default) */
+  color: #eee; /* Light text (default) */
+  transition: background-color 0.3s, color 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f4f9;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbars for floating image */
 }
 
 .container {
-  text-align: center;
-  background-color: white;
+  background-color: #1e1e1e; /* Darker container (default) */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  text-align: center;
+  width: 400px;
+  transition: background-color 0.3s;
+  position: relative; /* Needed for absolute positioning of the image */
 }
 
 h1 {
-  font-size: 2rem;
+  color: #61afef; /* Lighter blue heading (default) */
+  transition: color 0.3s;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+#sensorState {
   margin-bottom: 20px;
 }
 
-button {
+p {
+  margin: 10px 0;
+}
+ button{
+  background-color: #61afef; /* Lighter blue button (default) */
+  color: #fff;
+   width:200px;
+  margin-bottom:10px;
   padding: 10px 20px;
-  background-color:#4799b3;
-  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 button:hover {
+  background-color: #569fc6; /* Slightly darker on hover */
+}
+
+/* Light Mode Styles (if you want a toggle to light mode) */
+body.light-mode {  /* Note the class name change */
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.container.light-mode { /* Note the class name change */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1.light-mode { /* Note the class name change */
+  color: #007bff;
+}
+
+#toggleSensorBtn.light-mode { /* Note the class name change */
+  background-color: #007bff;
+}
+
+#toggleSensorBtn.light-mode:hover {
   background-color: #0056b3;
 }
 
-#sensorState p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+.cigarette {
+  position: absolute;
+  width: 100px; /* Adjust cigarette width as needed */
+  height: auto;
+  animation: float 10s linear infinite; /* Adjust duration */
+  z-index: 0; /* Ensure image is above the container */
+  pointer-events: none; /* Prevent image from blocking button clicks */
+}
+
+.cigarette img {
+  width: 400%;
+  height: auto;
+}
+
+@keyframes float {
+  0% {
+    left: -150px;
+    top: 30%; /* Adjust starting vertical position */
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    left: calc(100% + 150px);
+    top: 50%; /* Adjust ending vertical position */
+    transform: translateY(-50%);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    left: -150px;
+    top: 30%; /* Return to start */
+    transform: translateY(-50%);
+    opacity: 0;
+  }
 }

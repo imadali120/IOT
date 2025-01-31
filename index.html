@@ -7,16 +7,23 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>ESP32 Sensor Monitoring</h1>
-    <div id="sensorState">
-      <h2>Current Readings</h2>
-      <p>LDR State: <span id="ldrState">Loading...</span></p>
-      <p>Distance: <span id="distance">Loading...</span></p>
-    </div>
-    <button id="toggleSensorBtn">Toggle Sensor</button>
-  </div>
+<div class="cigarette">  <img src="cig.png" alt="Cigarette">
+</div>
+<div class="cigarette">  <img src="cig.png" alt="Cigarette">
+</div>
+<div class="container">
 
-  <script type="module" src="script.js"></script>
+  <h1>Cigarette Protection System</h1>
+  <div id="sensorState">
+    <h2>Current Readings in the Room</h2>
+    <p>LDR State: <span id="ldrState">Loading...</span></p>
+    <p>Distance: <span id="distance">Loading...</span></p>
+  </div>
+  <button id="toggleSensorBtn">Toggle Sensor</button>
+<!--  <button id="sosButton">Activate SOS</button>-->
+<!--  <button id="sirenButton">Activate Siren</button>-->
+</div>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
